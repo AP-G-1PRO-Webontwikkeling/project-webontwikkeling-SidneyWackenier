@@ -4,7 +4,7 @@ import { Console, error } from 'console';
 import { read } from 'fs';
 
 async function requestAllData(choice: number) {
-    const response = await fetch("https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-SidneyWackenier/main/DC.json")
+    const response = await fetch("https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-SidneyWackenier/main/json/dc.json")
     if(!response.ok) {
         throw new Error("Watchtower connection failed. Try again.")
     }
@@ -13,7 +13,7 @@ async function requestAllData(choice: number) {
 }
 
 async function filterByID(choice: number) {
-    const response = await fetch("https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-SidneyWackenier/main/DC.json")
+    const response = await fetch("https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-SidneyWackenier/main/json/dc.json")
     if (!response.ok) {
         throw new Error("Watchtower connection failed. Try again.")
     }
