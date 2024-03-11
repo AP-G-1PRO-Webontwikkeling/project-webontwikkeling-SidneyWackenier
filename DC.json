@@ -1,0 +1,172 @@
+[
+    {
+        "id": "DC-001",
+        "name": "Batman",
+        "bio": "Bruce Wayne, orphaned as a child after witnessing his parents' murder, transforms into the vigilante Batman to combat crime in Gotham City using his wealth, intellect, and martial arts prowess.",
+        "firstAppearance": 1939,
+        "hero": true,
+        "birthdate": "02-19-1970",
+        "logo":"",
+        "type": "Tech",
+        "abilities": ["Peak physicial condition","Master detective skills","Martial arts expert"], 
+        "group": {
+            "id": "G-001",
+            "name": "The Justice League",
+            "foundingYear": 1960,
+            "base": "Hall of Justice"
+        }
+    },
+    {
+        "id": "DC-002",
+        "name": "The Joker",
+        "bio": "The Joker, a deranged and enigmatic criminal mastermind with a penchant for chaos and an unpredictable nature, serves as the arch-nemesis of Gotham's Dark Knight, Batman.",
+        "firstAppearance": 1940,
+        "hero": false,
+        "birthdate": "Unknown",
+        "logo":"",
+        "type": "Tech",
+        "abilities": ["Master manipulator","Genius-level intellect","Unpredictability and adaptability"], 
+        "group": {
+            "id": "G-002",
+            "name": "The Legion of Doom",
+            "foundingYear": 1978,
+            "base": "Hall of Doom"
+        }
+    },
+    {
+        "id": "DC-003",
+        "name": "Superman",
+        "bio": "Superman, born Kal-El on the planet Krypton and raised as Clark Kent on Earth, is a legendary superhero known for his incredible powers and unwavering dedication to truth, justice, and the protection of humanity.",
+        "firstAppearance": 1938,
+        "hero": true,
+        "birthdate": "02-29-1980",
+        "logo":"",
+        "type": "Meta",
+        "abilities": ["Superhuman strength","Flight","Invulnerability"], 
+        "group": {
+            "id": "G-001",
+            "name": "The Justice League",
+            "foundingYear": 1960,
+            "base": "Hall of Justice"
+        }
+    },
+    {
+        "id": "DC-004",
+        "name": "Lex Luthor",
+        "bio": "Lex Luthor, a brilliant and ruthless billionaire industrialist, is Superman's archenemy, known for his unmatched intellect, cunning schemes, and relentless pursuit to prove himself as the superior being.",
+        "firstAppearance": 1940,
+        "hero": false,
+        "birthdate": "09-28-1980",
+        "logo":"",
+        "type": "Tech",
+        "abilities": ["Genius-level intellect","Vast wealth and resources","Mastery of manipulation and politics"], 
+        "group": {
+            "id": "G-002",
+            "name": "The Legion of Doom",
+            "foundingYear": 1978,
+            "base": "Hall of Doom"
+        }
+    },
+    {
+        "id": "DC-005",
+        "name": "The Flash",
+        "bio": "The Flash, alter ego Barry Allen or sometimes Wally West, is a superhero gifted with the power of superhuman speed, using his abilities to protect Central City and uphold justice as a member of the Justice League.",
+        "firstAppearance": 1940,
+        "hero": true,
+        "birthdate": "09-30-1992",
+        "logo":"",
+        "type": "Meta",
+        "abilities": ["Superhuman speed","Time travel and dimensional travel","Speed Force manipulation"], 
+        "group": {
+            "id": "G-001",
+            "name": "The Justice League",
+            "foundingYear": 1960,
+            "base": "Hall of Justice"
+        }
+    },
+    {
+        "id": "DC-006",
+        "name": "Captain Cold",
+        "bio": "Captain Cold, also known as Leonard Snart, is a cunning and ice-cold criminal mastermind armed with a specialized cold gun, leading a band of rogues known as the \"Rogues\" in opposition to The Flash and other superheroes in Central City.",
+        "firstAppearance": 1957,
+        "hero": false,
+        "birthdate": "06-02-1972",
+        "logo":"",
+        "type": "Tech",
+        "abilities": ["Cryokinesis","Cold Gun","Tactical genius"], 
+        "group": {
+            "id": "G-002",
+            "name": "The Legion of Doom",
+            "foundingYear": 1978,
+            "base": "Hall of Doom"
+        }
+    },
+    {
+        "id": "DC-007",
+        "name": "Green Lantern",
+        "bio": "Hal Jordan, a fearless test pilot, becomes the Green Lantern of Sector 2814, wielding the power ring fueled by willpower to protect the universe as a member of the intergalactic Green Lantern Corps.",
+        "firstAppearance": 1940,
+        "hero": true,
+        "birthdate": "02-20-1969",
+        "logo":"",
+        "type": "Tech",
+        "abilities": ["Energy constructs","Flight","Force-field generation"], 
+        "group": {
+            "id": "G-001",
+            "name": "The Justice League",
+            "foundingYear": 1960,
+            "base": "Hall of Justice"
+        }
+    },
+    {
+        "id": "DC-008",
+        "name": "Sinestro",
+        "bio": "Sinestro, once a revered Green Lantern, turned tyrannical antagonist, harnesses the power of fear as the leader of the Sinestro Corps, seeking to impose his authoritarian vision upon the universe.",
+        "firstAppearance": 1961,
+        "hero": false,
+        "birthdate": "Unknown",
+        "logo":"",
+        "type": "Tech",
+        "abilities": ["Energy constructs","Flight","Force-field generation"], 
+        "group": {
+            "id": "G-002",
+            "name": "The Legion of Doom",
+            "foundingYear": 1978,
+            "base": "Hall of Doom"
+        }
+    },
+    {
+        "id": "DC-009",
+        "name": "Wonder Woman",
+        "bio": "Wonder Woman, also known as Diana Prince, is a powerful Amazonian warrior princess and ambassador of peace gifted with superhuman strength, speed, and flight, who fights for justice and equality as a founding member of the Justice League.",
+        "firstAppearance": 1941,
+        "hero": true,
+        "birthdate": "03-22-3000 B.C.",
+        "logo":"",
+        "type": "Magic",
+        "abilities": ["Superhuman strength","Combat skills and weaponry","Flight and enhanced speed"], 
+        "group": {
+            "id": "G-001",
+            "name": "The Justice League",
+            "foundingYear": 1960,
+            "base": "Hall of Justice"
+        }
+    },
+    {
+        "id": "DC-010",
+        "name": "Cheetah",
+        "bio": "Cheetah, alias Barbara Ann Minerva, is a ferocious and cunning archaeologist transformed into a deadly were-cheetah with enhanced speed, strength, and agility, serving as one of Wonder Woman's most formidable adversaries.",
+        "firstAppearance": 1943,
+        "hero": false,
+        "birthdate": "08-07-1987",
+        "logo":"",
+        "type": "Magic",
+        "abilities": ["Enhanced physical attributes","Claws and fangs","Enhanced senses and tracking"], 
+        "group": {
+            "id": "G-002",
+            "name": "The Legion of Doom",
+            "foundingYear": 1978,
+            "base": "Hall of Doom"
+        }
+    }
+]

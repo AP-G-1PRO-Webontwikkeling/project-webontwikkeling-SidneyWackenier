@@ -1,0 +1,14 @@
+[
+    {
+        "id": "G-001",
+        "name": "The Justice League",
+        "foundingYear": 1960,
+        "base": "Hall of Justice"
+    },
+    {
+        "id": "G-002",
+        "name": "The Legion of Doom",
+        "foundingYear": 1978,
+        "base": "Hall of Doom"
+    }
+]
