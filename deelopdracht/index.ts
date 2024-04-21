@@ -14,7 +14,7 @@ app.set("port", 3000);
 let data : Character[];
 
 app.get("/", async (req, res) => {
-      let response = await fetch("https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-SidneyWackenier/main/json/dc.json");
+      let response = await fetch("https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-SidneyWackenier/main/deelopdracht/json/dc.json");
       data = await response.json();
       res.render("index", { data });
 });

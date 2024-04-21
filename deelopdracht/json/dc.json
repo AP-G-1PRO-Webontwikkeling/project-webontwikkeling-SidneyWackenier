@@ -6,7 +6,7 @@
         "firstAppearance": 1939,
         "hero": true,
         "birthdate": "02-19-1970",
-        "logo":"https://github.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-SidneyWackenier/blob/main/images/Batman.png?raw=true",
+        "logo":"https://github.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-SidneyWackenier/blob/main/deelopdracht/public/images/Batman.png?raw=true",
         "type": "Tech",
         "abilities": ["Peak physicial condition","Master detective skills","Martial arts expert"], 
         "group": {
@@ -23,7 +23,7 @@
         "firstAppearance": 1940,
         "hero": false,
         "birthdate": "Unknown",
-        "logo":"https://github.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-SidneyWackenier/blob/main/images/Joker.png?raw=true",
+        "logo":"https://github.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-SidneyWackenier/blob/main/deelopdracht/public/images/Joker.png?raw=true",
         "type": "Tech",
         "abilities": ["Master manipulator","Genius-level intellect","Unpredictability and adaptability"], 
         "group": {
@@ -40,7 +40,7 @@
         "firstAppearance": 1938,
         "hero": true,
         "birthdate": "02-29-1980",
-        "logo":"https://github.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-SidneyWackenier/blob/main/images/Superman.png?raw=true",
+        "logo":"https://github.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-SidneyWackenier/blob/main/deelopdracht/public/images/Superman.png?raw=true",
         "type": "Meta",
         "abilities": ["Superhuman strength","Flight","Invulnerability"], 
         "group": {
@@ -57,7 +57,7 @@
         "firstAppearance": 1940,
         "hero": false,
         "birthdate": "09-28-1980",
-        "logo":"https://github.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-SidneyWackenier/blob/main/images/Luthor.png?raw=true",
+        "logo":"https://github.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-SidneyWackenier/blob/main/deelopdracht/public/images/Luthor.png?raw=true",
         "type": "Tech",
         "abilities": ["Genius-level intellect","Vast wealth and resources","Mastery of manipulation and politics"], 
         "group": {
@@ -74,7 +74,7 @@
         "firstAppearance": 1940,
         "hero": true,
         "birthdate": "09-30-1992",
-        "logo":"https://github.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-SidneyWackenier/blob/main/images/Flash.png?raw=true",
+        "logo":"https://github.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-SidneyWackenier/blob/main/deelopdracht/public/images/Flash.png?raw=true",
         "type": "Meta",
         "abilities": ["Superhuman speed","Time travel and dimensional travel","Speed Force manipulation"], 
         "group": {
@@ -91,7 +91,7 @@
         "firstAppearance": 1957,
         "hero": false,
         "birthdate": "06-02-1972",
-        "logo":"https://github.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-SidneyWackenier/blob/main/images/Cold.png?raw=true",
+        "logo":"https://github.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-SidneyWackenier/blob/main/deelopdracht/public/images/Cold.png?raw=true",
         "type": "Tech",
         "abilities": ["Cryokinesis","Cold Gun","Tactical genius"], 
         "group": {
@@ -108,7 +108,7 @@
         "firstAppearance": 1940,
         "hero": true,
         "birthdate": "02-20-1969",
-        "logo":"https://github.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-SidneyWackenier/blob/main/images/Lantern.png?raw=true",
+        "logo":"https://github.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-SidneyWackenier/blob/main/deelopdracht/public/images/Lantern.png?raw=true",
         "type": "Tech",
         "abilities": ["Energy constructs","Flight","Force-field generation"], 
         "group": {
@@ -125,7 +125,7 @@
         "firstAppearance": 1961,
         "hero": false,
         "birthdate": "Unknown",
-        "logo":"https://github.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-SidneyWackenier/blob/main/images/Sinestro.png?raw=true",
+        "logo":"https://github.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-SidneyWackenier/blob/main/deelopdracht/public/images/Sinestro.png?raw=true",
         "type": "Tech",
         "abilities": ["Energy constructs","Flight","Force-field generation"], 
         "group": {
@@ -142,7 +142,7 @@
         "firstAppearance": 1941,
         "hero": true,
         "birthdate": "03-22-3000 B.C.",
-        "logo":"https://github.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-SidneyWackenier/blob/main/images/Wonder.png?raw=true",
+        "logo":"https://github.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-SidneyWackenier/blob/main/deelopdracht/public/images/Wonder.png?raw=true",
         "type": "Magic",
         "abilities": ["Superhuman strength","Combat skills and weaponry","Flight and enhanced speed"], 
         "group": {
@@ -159,7 +159,7 @@
         "firstAppearance": 1943,
         "hero": false,
         "birthdate": "08-07-1987",
-        "logo":"https://github.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-SidneyWackenier/blob/main/images/Cheetah.png?raw=true",
+        "logo":"https://github.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-SidneyWackenier/blob/main/deelopdracht/public/images/Cheetah.png?raw=true",
         "type": "Magic",
         "abilities": ["Enhanced physical attributes","Claws and fangs","Enhanced senses and tracking"], 
         "group": {
