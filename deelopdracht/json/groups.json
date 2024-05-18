@@ -2,13 +2,15 @@
     {
         "id": "G-001",
         "name": "The Justice League",
-        "foundingYear": 1960,
-        "base": "Hall of Justice"
+        "groupAbility": "Justice League members get +1 power for every member in play.",
+        "alignment": "Good",
+        "members": 6
     },
     {
         "id": "G-002",
-        "name": "The Legion of Doom",
-        "foundingYear": 1978,
-        "base": "Hall of Doom"
+        "name": "Villains",
+        "groupAbility": "The villain with the most power gets +1 power for every other villain in play.",
+        "alignment": "Evil",
+        "members": 4
     }
 ]
