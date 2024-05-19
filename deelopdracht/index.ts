@@ -29,6 +29,16 @@ app.get("/", async (req, res) => {
   const sortField = typeof req.query.sortField === "string" ? req.query.sortField : "name";
   const sortDirection = typeof req.query.sortDirection === "string" ? req.query.sortDirection : "asc";
 
+  const rarityOrder = {
+    "Common": 1,
+    "Uncommon": 2,
+    "Rare": 3,
+    "Epic": 4,
+    "Legendary": 5,
+    "Ultra": 6
+  };
+  
+
   let sortedCards = [...filteredCharacters].sort((a, b) => {
     if (sortField === "name") {
       return sortDirection === "asc" ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name);
@@ -36,6 +46,8 @@ app.get("/", async (req, res) => {
       return sortDirection === "asc" ? a.cost - b.cost : b.cost - a.cost;
     } else if (sortField === "power") {
       return sortDirection === "asc" ? a.power - b.power : b.power - a.power;  
+    } else if (sortField === "rarity") {
+      return sortDirection === "asc" ? Number(b.upgradeable) - Number(a.upgradeable) : Number(a.upgradeable) - Number(b.upgradeable);
     } else {
       return 0;
     }
