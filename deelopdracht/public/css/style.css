@@ -1,0 +1,54 @@
+html, body {
+    background-color: rgb(28, 25, 33);
+    color: white;
+}
+
+.cardlist {
+    display: grid;
+    grid-template-areas: 
+    "li li li li li"
+    "li li li li li";
+    gap: 30px;
+
+}
+
+.playercard {
+    position: relative;
+    max-width: 300px;
+    height: auto;
+    background-size: cover;
+    border: 10px solid;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.playercard img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.cost, .power {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.cost {
+    top: 10px;
+    left: 10px;
+    background-color: #00f; /* Blue */
+}
+
+.power {
+    top: 10px;
+    right: 10px;
+    background-color: #f90; /* Orange */
+}
