@@ -1,11 +1,26 @@
 <%- include ("sidebar.ejs") %>
-<body>
-    <h1>Characters</h1>
-    <form action="/" method="GET">
-        <label for="name">Filter by Name:</label>
-        <input type="text" id="name" name="q" value="<%= q %>">
-        <button type="submit">Filter</button>
-    </form>
+<main>
+    <section id="navigation">
+        <h1>Characters</h1>
+        <form action="/" method="GET">
+            <label for="name">Filter by Name:</label>
+            <input type="text" id="name" name="q" value="<%= q %>">
+            <button type="submit">Filter</button>
+        </form>
+        <form action="/" method="get">
+            <input type="hidden" name="q" value="<%= q %>">
+            <select name="sortField">
+                <option value="name">Name</option>
+                <option value="cost">Cost</option>
+                <option value="power">Power</option>
+            </select>
+            <select name="sortDirection">
+                <option value="asc">Ascending</option>
+                <option value="desc">Descending</option>
+            </select>
+            <button type="submit">Sort</button>
+        </form>
+    </section>
     <ul class="cardlist">
         <% filteredCharacters.forEach(character => { %>
             <li class="playercard">
@@ -15,5 +30,6 @@
             </li>
         <% }); %>
     </ul>
+</main>
 </body>
 </html>

@@ -1,7 +1,29 @@
 html, body {
     background-color: rgb(28, 25, 33);
     color: white;
+    max-width: 100vw;
+    height: auto;
+
 }
+
+body {
+    display: grid;
+    grid-template-rows: 
+    "header main";
+}
+
+header {
+    grid-row: header;
+    padding-right: 1rem;
+    border-right: 1px solid white;
+    width: 100px;
+}
+
+main {
+    grid-row: main;
+    padding: 1rem;
+}
+
 
 .cardlist {
     display: grid;
@@ -9,7 +31,6 @@ html, body {
     "li li li li li"
     "li li li li li";
     gap: 30px;
-
 }
 
 .playercard {
