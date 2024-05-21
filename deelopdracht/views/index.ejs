@@ -28,7 +28,8 @@
             <li class="playercard">
                 <div class="cost"><%= character.cost %></div>
                 <div class="power"><%= character.power %></div>
-                <img src="<%= character.logo %>" alt="<%= character.name %>">
+                <a href="detail/<%= character.id %>""><img src="<%= character.name%>" alt="Name of character" class="nameplate"></a>
+                <img src="<%= character.logo %>" alt="Card artwork of character" class="artwork">
             </li>
         <% }); %>
     </ul>

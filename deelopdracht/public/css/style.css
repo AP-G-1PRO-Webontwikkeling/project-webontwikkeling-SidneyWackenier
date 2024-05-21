@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 html, body {
     background-color: rgb(28, 25, 33);
+    font-family: 'Montserrat', sans-serif;
     color: white;
     max-width: 100vw;
     height: auto;
-
+    box-sizing: border-box;
 }
 
 body {
@@ -15,6 +18,7 @@ body {
 header {
     grid-row: header;
     padding-right: 1rem;
+    margin-right: 1rem;
     border-right: 1px solid white;
     width: 100px;
 }
@@ -33,6 +37,29 @@ main {
     gap: 30px;
 }
 
+#details {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: left;
+    padding-bottom: 10rem;
+}
+
+#info {
+    padding: 5rem;
+}
+
+#additional {
+    display: flex;
+    flex-flow: row;
+    gap: 5rem;
+}
+
+#tags {
+    display: flex;
+    flex-flow: row;
+}
+
 .playercard {
     position: relative;
     max-width: 300px;
@@ -40,36 +67,52 @@ main {
     background-size: cover;
     border: 10px solid;
     border-radius: 10px;
-    overflow: hidden;
+    overflow: visible;
+    text-align: center;
+    transition: transform .2s;
+    list-style: none;
 }
 
-.playercard img {
+.playercard:hover {
+    transform: scale(1.05);
+}
+
+.artwork {
     width: 100%;
     height: auto;
     object-fit: cover;
 }
 
+.nameplate {
+    position: absolute;
+    width: 115%;
+    height: auto;
+    top: 90%;
+    left: -7%; 
+    transform: translateY(-50%);
+}
+
 .cost, .power {
     position: absolute;
-    width: 50px;
-    height: 50px;
+    width: 3rem;
+    height: 3rem;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 24px;
+    font-size: 2rem;
     font-weight: bold;
     color: #fff;
 }
 
 .cost {
-    top: 10px;
-    left: 10px;
+    top: -20px;
+    left: -20px;
     background-color: #00f; /* Blue */
 }
 
 .power {
-    top: 10px;
-    right: 10px;
+    top: -20px;
+    right: -20px;
     background-color: #f90; /* Orange */
 }

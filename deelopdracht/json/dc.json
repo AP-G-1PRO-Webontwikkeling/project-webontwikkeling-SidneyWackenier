@@ -116,7 +116,7 @@
     {
         "id": "DC-007",
         "name": "https://github.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-SidneyWackenier/blob/main/deelopdracht/public/images/LanternName.png?raw=true",
-        "description": "Ongoing: Protect this location with a Construct. Cards here can't be destroyed",
+        "description": "Ongoing: Protect this location with a Construct. Cards here can't be destroyed.",
         "cost": 2,
         "power": 4,
         "upgradeable": false,

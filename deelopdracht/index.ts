@@ -63,6 +63,21 @@ app.get("/", async (req, res) => {
   });
 });
 
+app.get("/detail/:id", async (req, res) => {
+  let response = await fetch("https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-SidneyWackenier/main/deelopdracht/json/dc.json");
+  data = await response.json();
+
+  const cardId = req.params.id;
+  
+  const clickedCard = data.find(data => data.id === cardId);
+
+  console.log(clickedCard);
+
+  res.render("detail", {
+      clickedCard: clickedCard
+  });
+});
+
 
 app.listen(app.get("port"), () => {
   console.log("[server] http://localhost:" + app.get("port"));

@@ -1,1 +1,31 @@
 <%- include ("sidebar.ejs") %>
+<main>
+    <h1>Details</h1>
+    <section id="details">
+        <article class="playercard">
+         <div class="cost"><%= clickedCard.cost %></div>
+         <div class="power"><%= clickedCard.power %></div>
+         <img src="<%= clickedCard.name%>" alt="Name of character" class="nameplate">
+         <img src="<%= clickedCard.logo %>" alt="Card artwork of character" class="artwork">
+        </article>
+        <article id="info">
+            <h2>Ability: </h2>
+            <p><%= clickedCard.description %></p>
+            <h3>Additional info: </h3>
+            <article id="additional">
+            <p>Date added: <%= clickedCard.dateadded %></p>
+            <article id="tags">
+             <p>Tags:</p>
+             <ul>
+                <% clickedCard.tags.forEach(tag => { %>
+                    <li><%= tag %></li>
+                <% }); %>
+             </ul>
+            </article>
+        </article>    
+        <h1>Related Groups:</h1>
+    </section>
+    
+</main>
+</body>
+</html>
