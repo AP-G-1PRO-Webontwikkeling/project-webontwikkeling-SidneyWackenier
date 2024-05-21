@@ -1,6 +1,18 @@
 <%- include ("sidebar.ejs") %>
-<main>
-    <h1>Details</h1>  
+<main class="detailmain">
+    <h1>Details</h1>
+    <h2><%= clickedGroup.name%> </h2>
+    <section id="groupdetails">
+        <article class="groupcard">
+         <img src="<%= clickedGroup.logo %>" alt="Card artwork of group" class="artwork">
+        </article>
+        <article class="info">
+            <h2>Ability: </h2>
+            <p><%= clickedGroup.groupAbility %></p>
+            <h3>Additional info: </h3>
+            <article id="additional">
+            <p>Alignment: <%= clickedGroup.alignment %></p>
+            <p>Number of members: <%= clickedGroup.members %></p> 
 </main>
 </body>
 </html>

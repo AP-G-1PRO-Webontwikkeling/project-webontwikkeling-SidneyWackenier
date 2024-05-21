@@ -1,5 +1,5 @@
 <%- include ("sidebar.ejs") %>
-<main>
+<main class="detailmain">
     <h1>Details</h1>
     <section id="details">
         <article class="playercard">
@@ -8,7 +8,7 @@
          <img src="<%= clickedCard.name%>" alt="Name of character" class="nameplate">
          <img src="<%= clickedCard.logo %>" alt="Card artwork of character" class="artwork">
         </article>
-        <article id="info">
+        <article class="info">
             <h2>Ability: </h2>
             <p><%= clickedCard.description %></p>
             <h3>Additional info: </h3>

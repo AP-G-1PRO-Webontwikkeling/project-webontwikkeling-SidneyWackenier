@@ -7,46 +7,62 @@ html, body {
     max-width: 100vw;
     height: auto;
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    display: grid;
-    grid-template-rows: 
-    "header main";
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 header {
-    grid-row: header;
+    width: 100%;
     padding-right: 1rem;
     margin-right: 1rem;
     border-right: 1px solid white;
-    width: 100px;
+    max-width: 1200px;
 }
 
 main {
-    grid-row: main;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1200px; 
     padding: 1rem;
 }
 
+.detailmain {
+    align-items: center;
+}
+
+#navigation {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
 
 .cardlist {
     display: grid;
-    grid-template-areas: 
-    "li li li li li"
-    "li li li li li";
+    grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
     gap: 30px;
+    width: 90%;
 }
 
-#details {
+#details, #groupdetails {
     display: flex;
     flex-flow: row;
     align-items: center;
     justify-content: left;
     padding-bottom: 10rem;
+    width: 75%;
 }
 
-#info {
-    padding: 5rem;
+.info {
+    padding-left: 5rem;
 }
 
 #additional {
@@ -62,7 +78,7 @@ main {
 
 .playercard, .groupcard {
     position: relative;
-    max-width: 20rem;
+    width: 10rem;
     height: auto;
     background-size: cover;
     border: 0.5rem solid slategray;
@@ -73,9 +89,18 @@ main {
     list-style: none;
 }
 
-
 .playercard:hover, .groupcard:hover {
     transform: scale(1.05);
+}
+
+#details .playercard, #groupdetails .groupcard {
+    width: 100%;
+    max-width: 25%;
+}
+
+#details .groupcard {
+    width: 100%;
+    max-width: 10%;
 }
 
 .artwork {
@@ -109,11 +134,11 @@ main {
 .cost {
     top: -20px;
     left: -20px;
-    background-color: #00f; /* Blue */
+    background-color: #00f;
 }
 
 .power {
     top: -20px;
     right: -20px;
-    background-color: #f90; /* Orange */
+    background-color: #f90;
 }

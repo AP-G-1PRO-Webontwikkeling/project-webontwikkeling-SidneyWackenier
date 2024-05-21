@@ -1,13 +1,14 @@
 <%- include ("sidebar.ejs") %>
 <main>
+    <h1>Characters</h1>
     <section id="navigation">
-        <h1>Characters</h1>
         <form action="/" method="GET">
-            <label for="name">Filter by Name:</label>
+            <label for="name">Filter by Name: </label>
             <input type="text" id="name" name="q" value="<%= q %>">
             <button type="submit">Filter</button>
         </form>
         <form action="/" method="get">
+            <label for="name">Sort by: </label>
             <input type="hidden" name="q" value="<%= q %>">
             <select name="sortField">
                 <option value="name">Name</option>

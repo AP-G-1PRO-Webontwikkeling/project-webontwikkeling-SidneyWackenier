@@ -90,7 +90,7 @@ app.get("/groups", async (req, res) => {
 });
 
 app.get("/groupdetail/:id", async (req, res) => {
-  let response = await fetch("https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-SidneyWackenier/main/deelopdracht/json/group.json");
+  let response = await fetch("https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-SidneyWackenier/main/deelopdracht/json/groups.json");
   data = await response.json();
 
   const groupId = req.params.id;
@@ -100,7 +100,7 @@ app.get("/groupdetail/:id", async (req, res) => {
   console.log(clickedGroup);
 
   res.render("groupdetail", {
-      clickedCard: clickedGroup
+      clickedGroup: clickedGroup
   });
 });
 
