@@ -16,6 +16,7 @@ export interface Character {
 export interface Group {
     id: string;
     name: string;
+    logo: string;
     groupAbility: string;
     alignment: "Good" | "Evil";
     members: number;

@@ -60,12 +60,12 @@ main {
     flex-flow: row;
 }
 
-.playercard {
+.playercard, .groupcard {
     position: relative;
-    max-width: 300px;
+    max-width: 20rem;
     height: auto;
     background-size: cover;
-    border: 10px solid;
+    border: 0.5rem solid slategray;
     border-radius: 10px;
     overflow: visible;
     text-align: center;
@@ -73,7 +73,8 @@ main {
     list-style: none;
 }
 
-.playercard:hover {
+
+.playercard:hover, .groupcard:hover {
     transform: scale(1.05);
 }
 

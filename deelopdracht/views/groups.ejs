@@ -1,0 +1,14 @@
+<%- include ("sidebar.ejs") %>
+<main>
+    <h1>Groups</h1>
+    <ul class="cardlist">
+        <% data.forEach(group => { %>
+            <li class="groupcard">
+                <a href="groupdetail/<%= group.id %>"><img src="<%= group.logo %>" alt="Card artwork of group" class="artwork"></a>
+            </li>
+            <h1><%= group.name %></h1>
+        <% }); %>
+    </ul>
+</main>
+</body>
+</html>

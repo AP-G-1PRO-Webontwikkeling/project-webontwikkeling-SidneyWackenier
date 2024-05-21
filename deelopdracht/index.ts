@@ -63,6 +63,8 @@ app.get("/", async (req, res) => {
   });
 });
 
+
+
 app.get("/detail/:id", async (req, res) => {
   let response = await fetch("https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-SidneyWackenier/main/deelopdracht/json/dc.json");
   data = await response.json();
@@ -78,6 +80,29 @@ app.get("/detail/:id", async (req, res) => {
   });
 });
 
+app.get("/groups", async (req, res) => {
+  let response = await fetch("https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-SidneyWackenier/main/deelopdracht/json/groups.json");
+  data = await response.json();
+
+  res.render("groups", {
+      data: data
+  });
+});
+
+app.get("/groupdetail/:id", async (req, res) => {
+  let response = await fetch("https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-SidneyWackenier/main/deelopdracht/json/group.json");
+  data = await response.json();
+
+  const groupId = req.params.id;
+  
+  const clickedGroup = data.find(data => data.id === groupId);
+
+  console.log(clickedGroup);
+
+  res.render("groupdetail", {
+      clickedCard: clickedGroup
+  });
+});
 
 app.listen(app.get("port"), () => {
   console.log("[server] http://localhost:" + app.get("port"));
