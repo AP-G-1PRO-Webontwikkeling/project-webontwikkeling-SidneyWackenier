@@ -2,6 +2,7 @@
     {
         "id": "G-001",
         "name": "The Justice League",
+        "logo": "https://github.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-SidneyWackenier/blob/main/deelopdracht/public/images/Justice%20League.jpg?raw=true",
         "groupAbility": "Justice League members get +1 power for every member in play.",
         "alignment": "Good",
         "members": 6
@@ -9,6 +10,7 @@
     {
         "id": "G-002",
         "name": "Villains",
+        "logo": "https://github.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-SidneyWackenier/blob/main/deelopdracht/public/images/Villains.jpg?raw=true",
         "groupAbility": "The villain with the most power gets +1 power for every other villain in play.",
         "alignment": "Evil",
         "members": 4
