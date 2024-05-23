@@ -1,39 +1,6 @@
 <%- include ("sidebar.ejs") %>
 <main>
-    <h1>Characters</h1>
-    <section id="navigation">
-        <form action="/" method="GET">
-            <label for="name">Filter by Name: </label>
-            <input type="text" id="name" name="q" value="<%= q %>">
-            <button type="submit">Filter</button>
-        </form>
-        <form action="/" method="get">
-            <label for="name">Sort by: </label>
-            <input type="hidden" name="q" value="<%= q %>">
-            <select name="sortField">
-                <option value="name">Name</option>
-                <option value="cost">Cost</option>
-                <option value="power">Power</option>
-                <option value="rarity">Rarity</option>
-                <option value="upgradeable">Upgradeable</option>
-            </select>
-            <select name="sortDirection">
-                <option value="asc">Ascending</option>
-                <option value="desc">Descending</option>
-            </select>
-            <button type="submit">Sort</button>
-        </form>
-    </section>
-    <ul class="cardlist">
-        <% filteredCharacters.forEach(character => { %>
-            <li class="playercard">
-                <div class="cost"><%= character.cost %></div>
-                <div class="power"><%= character.power %></div>
-                <a href="detail/<%= character.id %>""><img src="<%= character.name%>" alt="Name of character" class="nameplate"></a>
-                <img src="<%= character.logo %>" alt="Card artwork of character" class="artwork">
-            </li>
-        <% }); %>
-    </ul>
+    <h1>Welcome to the DC Duel card database!</h1>
 </main>
 </body>
 </html>

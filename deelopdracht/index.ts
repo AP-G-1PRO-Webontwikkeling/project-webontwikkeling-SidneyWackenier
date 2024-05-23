@@ -14,8 +14,13 @@ app.set("view engine", "ejs");
 app.set("port", 3000);
 
 let data : Character[];
+let groupData : Group[];
 
 app.get("/", async (req, res) => {
+  res.render("index")
+});
+
+app.get("/characters", async (req, res) => {
   let response = await fetch("https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-SidneyWackenier/main/deelopdracht/json/dc.json");
   data = await response.json();
 
@@ -56,7 +61,7 @@ app.get("/", async (req, res) => {
   console.log('Sorted cards:', sortedCards);
 
 
-  res.render("index", {
+  res.render("characters", {
     data: filteredCharacters,
     filteredCharacters: sortedCards,
     q: q 

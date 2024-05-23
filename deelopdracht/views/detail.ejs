@@ -3,32 +3,36 @@
     <h1>Details</h1>
     <section id="details">
         <article class="playercard">
-         <div class="cost"><%= clickedCard.cost %></div>
-         <div class="power"><%= clickedCard.power %></div>
-         <img src="<%= clickedCard.name%>" alt="Name of character" class="nameplate">
-         <img src="<%= clickedCard.logo %>" alt="Card artwork of character" class="artwork">
+            <div class="cost"><%= clickedCard.cost %></div>
+            <div class="power"><%= clickedCard.power %></div>
+            <img src="<%= clickedCard.name %>" alt="Name of character" class="nameplate">
+            <img src="<%= clickedCard.logo %>" alt="Card artwork of character" class="artwork">
         </article>
         <article class="info">
             <h2>Ability: </h2>
             <p><%= clickedCard.description %></p>
             <h3>Additional info: </h3>
             <article id="additional">
-            <p>Date added: <%= clickedCard.dateadded %></p>
-            <article id="tags">
-             <p>Tags:</p>
-             <ul>
-                <% clickedCard.tags.forEach(tag => { %>
-                    <li><%= tag %></li>
-                <% }); %>
-             </ul>
+                <p>Date added: <%= clickedCard.dateadded %></p>
+                <article id="tags">
+                    <p>Tags:</p>
+                    <ul>
+                        <% clickedCard.tags.forEach(tag => { %>
+                            <li><%= tag %></li>
+                        <% }); %>
+                    </ul>
+                </article>
+            </article>    
+            <h1>Related Groups:</h1>
+            <article id="related">
+                <% if (clickedCard.group) { %>
+                    <a href="/groupdetail/<%= clickedCard.group.id %>">
+                        <img class="groupcard" src="<%= clickedCard.group.logo %>" alt="Group logo" width="15%" height="auto">
+                    </a>
+                <% } %>
             </article>
-        </article>    
-        <h1>Related Groups:</h1>
-        <article id="related">
-            <a href="groupdetail/<%= clickedCard.group.id%>"><img class="groupcard" src="<%= clickedCard.group.logo%>" alt="Group logo" width="15%" height="auto"></a>
         </article>
     </section>
-    
 </main>
 </body>
 </html>
