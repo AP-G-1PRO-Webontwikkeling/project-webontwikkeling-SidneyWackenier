@@ -1,17 +1,23 @@
 import * as readline from 'readline-sync';
 import { Character, Group } from './interfaces';
+import { connect } from "./database";
 import { Console, error } from 'console';
 import { read } from 'fs';
 import express from 'express';
 import ejs from "ejs";
+import dotenv from "dotenv";
 
+dotenv.config();
+
+console.log(process.env.PORT);
+console.log(process.env.MONGO_URI);
 
 const app = express();
 
 app.use(express.static("public"));
 
 app.set("view engine", "ejs");
-app.set("port", 3000);
+app.set("port", process.env.PORT || 3000);
 
 let data : Character[];
 let groupData : Group[];
