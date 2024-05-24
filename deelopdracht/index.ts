@@ -115,6 +115,7 @@ app.get("/groupdetail/:id", async (req, res) => {
   });
 });
 
-app.listen(app.get("port"), () => {
-  console.log("[server] http://localhost:" + app.get("port"));
+app.listen(app.get("port"), async () => {
+  await connect();
+  console.log("Server is running on port " + app.get("port"));
 });
