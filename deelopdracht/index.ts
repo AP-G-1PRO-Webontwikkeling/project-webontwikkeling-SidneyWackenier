@@ -1,6 +1,6 @@
 import * as readline from 'readline-sync';
 import { Character, Group } from './interfaces';
-import { connect } from "./database";
+import { connect, getCharacters } from "./database";
 import { Console, error } from 'console';
 import { read } from 'fs';
 import express from 'express';
@@ -20,23 +20,19 @@ app.set("view engine", "ejs");
 app.set("port", process.env.PORT || 3000);
 
 let data : Character[];
-let groupData : Group[];
 
 app.get("/", async (req, res) => {
   res.render("index")
 });
 
 app.get("/characters", async (req, res) => {
-  let response = await fetch("https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-SidneyWackenier/main/deelopdracht/json/dc.json");
-  data = await response.json();
+  let data : Character[] = await getCharacters();
 
-  // Filter-functie
   let q = req.query.q as string ?? "";
   let filteredCharacters: Character[] = data.filter((character) => {
     return character.name.toLowerCase().includes(q.toLowerCase());
   });
 
-  // Sorteer-functie
   const sortField = typeof req.query.sortField === "string" ? req.query.sortField : "name";
   const sortDirection = typeof req.query.sortDirection === "string" ? req.query.sortDirection : "asc";
 
@@ -77,8 +73,7 @@ app.get("/characters", async (req, res) => {
 
 
 app.get("/detail/:id", async (req, res) => {
-  let response = await fetch("https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-SidneyWackenier/main/deelopdracht/json/dc.json");
-  data = await response.json();
+  let data : Character[] = await getCharacters();
 
   const cardId = req.params.id;
   
@@ -92,8 +87,7 @@ app.get("/detail/:id", async (req, res) => {
 });
 
 app.get("/groups", async (req, res) => {
-  let response = await fetch("https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-SidneyWackenier/main/deelopdracht/json/groups.json");
-  data = await response.json();
+  let data: Character[] = await getCharacters();
 
   res.render("groups", {
       data: data
@@ -101,18 +95,17 @@ app.get("/groups", async (req, res) => {
 });
 
 app.get("/groupdetail/:id", async (req, res) => {
-  let response = await fetch("https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-SidneyWackenier/main/deelopdracht/json/groups.json");
-  data = await response.json();
+    const groups: Character[] = await getCharacters();
 
-  const groupId = req.params.id;
-  
-  const clickedGroup = data.find(data => data.id === groupId);
+    const groupId = req.params.id;
+    
+    const clickedGroup = groups.find(character => character.group.id === groupId);
 
-  console.log(clickedGroup);
+    console.log(clickedGroup);
 
-  res.render("groupdetail", {
-      clickedGroup: clickedGroup
-  });
+    res.render("groupdetail", {
+        clickedGroup: clickedGroup
+    });
 });
 
 app.listen(app.get("port"), async () => {

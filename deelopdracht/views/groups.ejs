@@ -2,12 +2,16 @@
 <main>
     <h1>Groups</h1>
     <ul class="cardlist">
-        <% data.forEach(group => { %>
-            <li class="groupcard">
-                <a href="groupdetail/<%= group.id %>"><img src="<%= group.logo %>" alt="Card artwork of group" class="artwork"></a>
-            </li>
-            <h1><%= group.name %></h1>
-        <% }); %>
+        <% let renderedGroups = {}; %>
+        <% data.forEach(character => {
+            if (!renderedGroups[character.group.id]) { %>
+                <li class="groupcard">
+                    <a href="groupdetail/<%= character.group.id %>"><img src="<%= character.group.logo %>" alt="Card artwork of group" class="artwork"></a>
+                </li>
+                <h1><%= character.group.name %></h1>
+                <% renderedGroups[character.group.id] = true;
+            }
+        }); %>
     </ul>
 </main>
 </body>
