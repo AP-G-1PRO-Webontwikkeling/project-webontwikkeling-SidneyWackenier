@@ -1,6 +1,6 @@
 import * as readline from 'readline-sync';
 import { Character, Group } from './interfaces';
-import { connect, getCharacters } from "./database";
+import { connect, getCharacters, updateCharacter } from "./database";
 import { Console, error } from 'console';
 import { read } from 'fs';
 import express from 'express';
@@ -13,6 +13,9 @@ console.log(process.env.PORT);
 console.log(process.env.MONGO_URI);
 
 const app = express();
+
+app.use(express.json({ limit: "1mb" }));
+app.use(express.urlencoded({ extended:true}))
 
 app.use(express.static("public"));
 
@@ -77,13 +80,20 @@ app.get("/detail/:id", async (req, res) => {
 
   const cardId = req.params.id;
   
-  const clickedCard = data.find(data => data.id === cardId);
+  const clickedCard = data.find(character => character.id === cardId);
 
   console.log(clickedCard);
 
   res.render("detail", {
       clickedCard: clickedCard
   });
+});
+
+app.post("/detail/:id/update", async(req, res) => {
+  let id : string = req.params.id;
+  let user : Character = req.body;
+  await updateCharacter(id, user);
+  res.redirect("/characters");
 });
 
 app.get("/groups", async (req, res) => {

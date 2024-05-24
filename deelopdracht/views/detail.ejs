@@ -16,11 +16,21 @@
                 <p>Date added: <%= clickedCard.dateadded %></p>
                 <article id="tags">
                     <p>Tags:</p>
-                    <ul>
-                        <% clickedCard.tags.forEach(tag => { %>
-                            <li><%= tag %></li>
-                        <% }); %>
-                    </ul>
+                    <% if (Array.isArray(clickedCard.tags)) { %>
+                        <ul>
+                            <% clickedCard.tags.forEach(tag => { %>
+                                <li><%= tag.trim() %></li>
+                            <% }); %>
+                        </ul>
+                    <% } else if (typeof clickedCard.tags === 'string') { %>
+                        <ul>
+                            <% clickedCard.tags.split(',').forEach(tag => { %>
+                                <li><%= tag.trim() %></li>
+                            <% }); %>
+                        </ul>
+                    <% } else { %>
+                        <p>No tags available</p>
+                    <% } %>
                 </article>
             </article>    
             <h1>Related Groups:</h1>
@@ -32,6 +42,28 @@
                 <% } %>
             </article>
         </article>
+    </section>
+    <h1>Update User</h1>
+    <section id="editor">
+        <form action="/detail/<%= clickedCard.id %>/update" method="POST">
+            <div>
+                <label for="cost">Cost:</label>
+                <input type="text" id="cost" name="cost" value="<%= clickedCard.cost %>" required>
+            </div>
+            <div>
+                <label for="power">Power:</label>
+                <input type="text" id="power" name="power" value="<%= clickedCard.power %>" required>
+            </div>
+            <div>
+                <label for="tags">Tags:</label>
+                <input type="text" id="tags" name="tags" value="<%= clickedCard.tags %>" required>
+            </div>
+            <div>
+                <label for="description">Ability:</label>
+                <textarea id="description" name="description" rows="4" cols="50" required><%= clickedCard.description %></textarea>
+            </div>
+            <button type="submit">Update User</button>
+        </form>
     </section>
 </main>
 </body>

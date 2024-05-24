@@ -1,6 +1,7 @@
 import { Collection, MongoClient } from "mongodb";
 import dotenv from "dotenv";
 import { Character, Group } from "./interfaces";
+import { channel } from "diagnostics_channel";
 
 dotenv.config();
 export const client = new MongoClient(process.env.MONGO_URI || "mongodb+srv://sidneywackenier:e0X8OSpnClO6gdtE@project.dvtvpzc.mongodb.net/?retryWrites=true&w=majority&appName=Project");
@@ -40,4 +41,8 @@ export async function connect() {
     } catch (error) {
         console.error(error);
     }
+}
+
+export async function updateCharacter(id: string, character: Character) {
+    return await collection.updateOne({ id : id }, { $set:  character });
 }

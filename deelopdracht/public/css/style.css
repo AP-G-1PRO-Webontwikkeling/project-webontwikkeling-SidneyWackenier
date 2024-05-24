@@ -52,7 +52,7 @@ main {
     width: 90%;
 }
 
-#details, #groupdetails {
+#details, #groupdetails, #editor {
     display: flex;
     flex-flow: row;
     align-items: center;
