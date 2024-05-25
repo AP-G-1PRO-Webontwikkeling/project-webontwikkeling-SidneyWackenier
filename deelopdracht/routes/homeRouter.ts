@@ -1,9 +1,10 @@
 import express from "express";
+import { secureMiddleware } from "../secureMiddleware";
 
 export function homeRouter() {
     const router = express.Router();
 
-    router.get("/", async(req, res) => {
+    router.get("/", secureMiddleware, async(req, res) => {
         res.render("index");
     });
 
