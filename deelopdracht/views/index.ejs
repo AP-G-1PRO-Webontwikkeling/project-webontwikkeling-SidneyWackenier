@@ -1,6 +1,10 @@
 <%- include ("sidebar.ejs") %>
 <main>
     <h1>Welcome to the DC Duel card database!</h1>
+    <%= user.email %> is logged in!
+    <form action="/logout" method="post">
+        <button type="submit">Logout</button>
+    </form>
 </main>
 </body>
 </html>

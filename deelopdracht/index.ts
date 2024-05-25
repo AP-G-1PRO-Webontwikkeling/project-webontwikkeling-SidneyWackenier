@@ -1,11 +1,17 @@
 import * as readline from 'readline-sync';
-import { Character, Group } from './interfaces';
-import { connect, getCharacters, updateCharacter } from "./database";
+import { Character, Group, User } from './types';
+import { connect, getCharacters, updateCharacter, login } from "./database";
 import { Console, error } from 'console';
 import { read } from 'fs';
 import express from 'express';
 import ejs from "ejs";
 import dotenv from "dotenv";
+import path, { format } from "path";
+import session from "./session";
+import { secureMiddleware } from "./secureMiddleware";
+import { loginRouter } from "./routes/loginRouter";
+import { homeRouter } from "./routes/homeRouter";
+import { flashMiddleware } from "./flashMiddleware";
 
 dotenv.config();
 
@@ -19,13 +25,40 @@ app.use(express.urlencoded({ extended:true}))
 
 app.use(express.static("public"));
 
+app.use(session);
+
+app.use(flashMiddleware);
+
 app.set("view engine", "ejs");
 app.set("port", process.env.PORT || 3000);
 
-let data : Character[];
+app.get("/", secureMiddleware, async(req, res) => {
+  res.render("index");
+});
 
-app.get("/", async (req, res) => {
-  res.render("index")
+app.get("/login", (req, res) => {
+  res.render("login");
+});
+
+app.post("/login", async(req, res) => {
+  const email : string = req.body.email;
+  const password : string = req.body.password;
+  try {
+      let user : User = await login(email, password);
+      delete user.password; 
+      req.session.user = user;
+      req.session.message = {type: "success", message: "Login successful"};
+      res.redirect("/");
+  } catch (e : any) {
+    req.session.message = {type: "error", message: e.message};
+    res.redirect("/login");
+  }
+});
+
+app.post("/logout", async(req, res) => {
+  req.session.destroy(() => {
+      res.redirect("/login");
+  });
 });
 
 app.get("/characters", async (req, res) => {
@@ -119,6 +152,11 @@ app.get("/groupdetail/:id", async (req, res) => {
 });
 
 app.listen(app.get("port"), async () => {
-  await connect();
-  console.log("Server is running on port " + app.get("port"));
+  try {
+    await connect();
+    console.log("Server started on http://localhost:" + app.get('port'));
+} catch (e) {
+    console.log(e);
+    process.exit(1); 
+}
 });
