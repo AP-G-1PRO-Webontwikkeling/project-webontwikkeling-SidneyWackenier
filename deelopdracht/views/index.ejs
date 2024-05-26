@@ -1,14 +1,18 @@
 <%- include ("partials/sidebar.ejs") %>
-<main>
+<main class="banner">
     <h1>Welcome to the DC Duel card database!</h1>
-    <%= user.email %> is logged in!
 
-    <form action="/logout" method="post">
-        <button type="submit">Logout</button>
+    <section id="titles">
+        <h2><a href="/characters">Characters</a></h2>
+        <h2><a href="/groups">Groups</a></h2>
+      </section>
+
+    <form id="logout" action="/logout" method="post">
+        User: <%= user.email %>
+        <button type="submit">Log Out</button>
     </form>
 
-    <h2><a href="/characters">Characters</a></h2>
-    <h2><a href="/groups">Groups</a></h2>
+    
 </main>
 </body>
-</html>
+<%- include ("partials/footer.ejs") %>

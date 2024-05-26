@@ -26,7 +26,7 @@
     </section>
     <ul class="cardlist">
         <% filteredCharacters.forEach(character => { %>
-            <li class="playercard">
+            <li class="playercard <%= character.rarity.toLowerCase() %>">
                 <div class="cost"><%= character.cost %></div>
                 <div class="power"><%= character.power %></div>
                 <a href="detail/<%= character.id %>""><img src="<%= character.name%>" alt="Name of character" class="nameplate"></a>
@@ -36,4 +36,4 @@
     </ul>
 </main>
 </body>
-</html>
+<%- include ("partials/footer.ejs") %>

@@ -17,21 +17,105 @@ body {
     align-items: center;
 }
 
-header {
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button {
+    padding: 8px 16px;
+    background-color: rgb(53, 47, 62);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+button:hover {
+    background-color: rgb(53, 47, 50);
+    transform: translateY(-2px);
+}
+
+header, footer {
+    background-color: rgb(53, 47, 62);
     width: 100%;
-    padding-right: 1rem;
-    margin-right: 1rem;
-    border-right: 1px solid white;
-    max-width: 1200px;
+}
+
+footer p {
+    font-size: xx-small;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.common {
+    border: 5px solid slategray;
+}
+
+.uncommon {
+    border: 5px solid green;
+}
+
+.rare {
+    border: 5px solid lightskyblue;
+}
+
+.epic {
+    border: 5px solid purple;
+}
+
+.legendary {
+    border: 5px solid gold;
+}
+
+.ultra {
+    border: 5px solid red;
+}
+
+.banner {
+    background-image: url("/deelopdracht/public/images/");
+}
+
+header nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style-type: none;
+    padding: 2rem;
+    margin: 0;
+    background-color: rgb(53, 47, 62);
+}
+
+header nav li {
+    margin: 0 30px;
+    display: flex;
+    align-items: center;
 }
 
 main {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     width: 100%;
     max-width: 1200px; 
     padding: 1rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+#titles {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 20rem;
+    padding-top: 5rem;
+}
+
+#logout {
+    padding-top: 5rem;
 }
 
 .detailmain {
@@ -43,7 +127,20 @@ main {
     display: flex;
     flex-direction: row;
     gap: 1rem;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
 }
+
+#navigation form {
+    background-color: inherit;
+    padding: inherit;
+}
+
+#navigation input {
+    border: 1px solid rgb(53, 47, 62);
+    border-radius: 8px;
+}
+
 
 .cardlist {
     display: grid;
@@ -57,7 +154,7 @@ main {
     flex-flow: row;
     align-items: center;
     justify-content: left;
-    padding-bottom: 10rem;
+    padding-bottom: 5rem;
     width: 75%;
 }
 
@@ -81,7 +178,6 @@ main {
     width: 10rem;
     height: auto;
     background-size: cover;
-    border: 0.5rem solid slategray;
     border-radius: 10px;
     overflow: visible;
     text-align: center;

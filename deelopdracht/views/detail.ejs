@@ -2,7 +2,7 @@
 <main class="detailmain">
     <h1>Details</h1>
     <section id="details">
-        <article class="playercard">
+        <article class="playercard <%= clickedCard.rarity.toLowerCase() %>">
             <div class="cost"><%= clickedCard.cost %></div>
             <div class="power"><%= clickedCard.power %></div>
             <img src="<%= clickedCard.name %>" alt="Name of character" class="nameplate">
@@ -69,4 +69,4 @@
     <% } %>
 </main>
 </body>
-</html>
+<%- include ("partials/footer.ejs") %>
