@@ -218,6 +218,7 @@ main {
     text-align: center;
     transition: transform .2s;
     list-style: none;
+    z-index: 1;
 }
 
 .groupcard {
@@ -252,6 +253,7 @@ main {
     top: 90%;
     left: -7%; 
     transform: translateY(-50%);
+    z-index: 10;
 }
 
 .cost, .power {
@@ -265,6 +267,7 @@ main {
     font-size: 2rem;
     font-weight: bold;
     color: #fff;
+    z-index: 10;
 }
 
 .cost {
