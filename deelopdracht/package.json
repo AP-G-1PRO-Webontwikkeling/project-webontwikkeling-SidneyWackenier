@@ -2,8 +2,7 @@
   "name": "project",
   "version": "1.0.0",
   "scripts": {
-    "build": "tsc",
-    "start": "node index.js"
+    "start": "node index.ts"
   },
   "author": "",
   "license": "ISC",
