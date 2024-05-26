@@ -55,6 +55,8 @@ export async function updateCharacter(id: string, character: Character) {
     return await collection.updateOne({ id : id }, { $set:  character });
 }
 
+
+
 async function createInitialUser() {
     if (await userCollection.countDocuments() > 2) {
         return;
@@ -98,4 +100,16 @@ export async function login(email: string, password: string) {
     } else {
         throw new Error("User not found");
     }
+}
+
+export async function registerUser(email: string, password: string) {
+    const existingUser = await userCollection.findOne({ email });
+    if (existingUser) {
+        throw new Error("User already exists!");
+    }
+    const hashedPassword = await bcrypt.hash(password, saltRounds);
+    const newUser: User = { email, password: hashedPassword, role: "USER" };
+    await userCollection.insertOne(newUser);
+    console.log(`User registered successfully: ${email}`);
+    return newUser;
 }

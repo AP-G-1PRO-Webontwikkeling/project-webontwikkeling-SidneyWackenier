@@ -1,4 +1,4 @@
-<%- include ("sidebar.ejs") %>
+<%- include ("partials/sidebar.ejs") %>
 <main class="detailmain">
     <h1>Details</h1>
     <section id="details">
@@ -43,7 +43,8 @@
             </article>
         </article>
     </section>
-    <h1>Update User</h1>
+    <% if (isAdmin) { %>
+    <h1>Edit Character</h1>
     <section id="editor">
         <form action="/detail/<%= clickedCard.id %>/update" method="POST">
             <div>
@@ -65,6 +66,7 @@
             <button type="submit">Update User</button>
         </form>
     </section>
+    <% } %>
 </main>
 </body>
 </html>

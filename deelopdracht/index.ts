@@ -1,6 +1,6 @@
 import * as readline from 'readline-sync';
 import { Character, Group, User } from './types';
-import { connect, getCharacters, updateCharacter, login } from "./database";
+import { connect, getCharacters, updateCharacter, login, registerUser } from "./database";
 import { Console, error } from 'console';
 import { read } from 'fs';
 import express from 'express';
@@ -35,9 +35,25 @@ app.use(flashMiddleware);
 app.set("view engine", "ejs");
 app.set("port", process.env.PORT || 3000);
 
+app.get("/register", async(req, res) => {
+  res.render("register");
+});
 
+app.post("/register/create", async (req, res) => {
+  const email: string = req.body.email;
+  const password: string = req.body.password;
 
-app.get("/characters", async (req, res) => {
+  try {
+      await registerUser(email, password);
+      req.session.message = { type: "success", message: "Registration successful. Please log in." };
+      res.redirect("/login");
+  } catch (e: any) {
+      req.session.message = { type: "error", message: e.message };
+      res.redirect("/register");
+  }
+});
+
+app.get("/characters", secureMiddleware, async (req, res) => {
   let data : Character[] = await getCharacters();
 
   let q = req.query.q as string ?? "";
@@ -83,7 +99,6 @@ app.get("/characters", async (req, res) => {
 });
 
 
-
 app.get("/detail/:id", async (req, res) => {
   let data : Character[] = await getCharacters();
 
@@ -94,7 +109,8 @@ app.get("/detail/:id", async (req, res) => {
   console.log(clickedCard);
 
   res.render("detail", {
-      clickedCard: clickedCard
+      clickedCard: clickedCard,
+      isAdmin: req.session.user && req.session.user.role === 'ADMIN'
   });
 });
 
@@ -105,7 +121,7 @@ app.post("/detail/:id/update", async(req, res) => {
   res.redirect("/characters");
 });
 
-app.get("/groups", async (req, res) => {
+app.get("/groups", secureMiddleware, async (req, res) => {
   let data: Character[] = await getCharacters();
 
   res.render("groups", {
