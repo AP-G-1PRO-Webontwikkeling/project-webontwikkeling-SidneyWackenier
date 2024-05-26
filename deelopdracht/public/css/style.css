@@ -77,7 +77,8 @@ footer p {
 }
 
 .banner {
-    background-image: url("/deelopdracht/public/images/");
+    background-image: url("../images/Banner.jpg");
+    background-size: cover;
 }
 
 header nav ul {
@@ -118,6 +119,23 @@ main {
     padding-top: 5rem;
 }
 
+.account {
+    background-color: rgb(53, 47, 62);
+    padding: 1rem;
+    border-radius: 2rem;
+    text-align: center;
+}
+
+.account form div {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+}
+
+.account form button {
+    background-color: rgb(28, 25, 33);
+}
+
 .detailmain {
     align-items: center;
 }
@@ -149,13 +167,30 @@ main {
     width: 90%;
 }
 
-#details, #groupdetails, #editor {
+#details, #groupdetails {
     display: flex;
     flex-flow: row;
     align-items: center;
     justify-content: left;
     padding-bottom: 5rem;
     width: 75%;
+}
+
+#editor form {
+    
+    background-color: rgb(53, 47, 62);
+    padding: 2rem;
+    border-radius: 2rem;
+}
+
+#editor form div {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0.5rem;
+}
+
+#editor form button {
+    background-color: rgb(28, 25, 33);
 }
 
 .info {
@@ -184,6 +219,11 @@ main {
     transition: transform .2s;
     list-style: none;
 }
+
+.groupcard {
+    border: 5px solid slategray;
+}
+
 
 .playercard:hover, .groupcard:hover {
     transform: scale(1.05);

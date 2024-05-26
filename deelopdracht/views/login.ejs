@@ -1,7 +1,8 @@
 <%- include ("partials/sidebar.ejs") %>
-<main>
+<main class="banner">
     <h1>Welcome to the DC Duel card database!</h1>
-    <h2>Log In:</h2>
+    <section class="account">
+        <h2>Log In:</h2>
     <form action="/login" method="post">
         <div class="form-group">
             <label for="email">Email:</label>
@@ -14,6 +15,7 @@
         <button type="submit">Login</button>
     </form>
     <p>Don't have an account? <a href="/register">Create one here.</a></p>
+    </section>  
 </main>
 </body>
 </html>   

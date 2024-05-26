@@ -1,7 +1,8 @@
 <%- include ("partials/sidebar.ejs") %>
-<main>
+<main class="banner">
     <h1>Welcome to the DC Duel card database!</h1>
-    <h2>Create an account:</h2>
+    <section class="account">
+        <h2>Create an account:</h2>
     <% if (typeof message !== 'undefined') { %>
         <div class="<%= message.type %>"><%= message.message %></div>
     <% } %>
@@ -16,6 +17,8 @@
         </div>
         <button type="submit">Register</button>
     </form>
+    </section>
+    
 </main>
 </body>
 </html>
