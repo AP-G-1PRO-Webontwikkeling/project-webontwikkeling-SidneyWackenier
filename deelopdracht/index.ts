@@ -27,39 +27,15 @@ app.use(express.static("public"));
 
 app.use(session);
 
+app.use(loginRouter());
+app.use(homeRouter());
+
 app.use(flashMiddleware);
 
 app.set("view engine", "ejs");
 app.set("port", process.env.PORT || 3000);
 
-app.get("/", secureMiddleware, async(req, res) => {
-  res.render("index");
-});
 
-app.get("/login", (req, res) => {
-  res.render("login");
-});
-
-app.post("/login", async(req, res) => {
-  const email : string = req.body.email;
-  const password : string = req.body.password;
-  try {
-      let user : User = await login(email, password);
-      delete user.password; 
-      req.session.user = user;
-      req.session.message = {type: "success", message: "Login successful"};
-      res.redirect("/");
-  } catch (e : any) {
-    req.session.message = {type: "error", message: e.message};
-    res.redirect("/login");
-  }
-});
-
-app.post("/logout", async(req, res) => {
-  req.session.destroy(() => {
-      res.redirect("/login");
-  });
-});
 
 app.get("/characters", async (req, res) => {
   let data : Character[] = await getCharacters();

@@ -7,7 +7,11 @@ export function loginRouter() {
   const router = express.Router();
 
   router.get("/login", async (req, res) => {
+    if (req.session.user) {
+      res.redirect("/");
+    } else {
       res.render("login");
+    }
   });
 
   router.post("/login", async (req, res) => {
@@ -17,9 +21,11 @@ export function loginRouter() {
           let user: User = await login(email, password);
           delete user.password;
           req.session.user = user;
-          res.redirect("/")
+          req.session.message = {type: "success", message: "Login successful"};
+          res.redirect("/");
       } catch (e: any) {
-          res.redirect("/login");
+        req.session.message = {type: "error", message: e.message};
+        res.redirect("/login");
       }
   });
 

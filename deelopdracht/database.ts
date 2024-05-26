@@ -56,7 +56,7 @@ export async function updateCharacter(id: string, character: Character) {
 }
 
 async function createInitialUser() {
-    if (await userCollection.countDocuments() > 0) {
+    if (await userCollection.countDocuments() > 2) {
         return;
     }
     let email : string | undefined = process.env.ADMIN_EMAIL;
@@ -68,6 +68,18 @@ async function createInitialUser() {
         email: email,
         password: await bcrypt.hash(password, saltRounds),
         role: "ADMIN"
+    });
+
+    const userEmail: string | undefined = process.env.USER_EMAIL;
+    const userPassword: string | undefined = process.env.USER_PASSWORD;
+    if (!userEmail || !userPassword) {
+        throw new Error("USER_EMAIL and USER_PASSWORD must be set in environment");
+    }
+
+    await userCollection.insertOne({
+        email: userEmail,
+        password: await bcrypt.hash(userPassword, saltRounds),
+        role: "USER"
     });
 }
 
