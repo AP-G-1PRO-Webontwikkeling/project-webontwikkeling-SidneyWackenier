@@ -278,3 +278,64 @@ main {
     right: -20px;
     background-color: #f90;
 }
+
+@media only screen and (max-width: 600px) {
+    header nav ul {
+        padding: 1rem;
+    }
+
+    #titles {
+        gap: 10rem; 
+        padding-top: 2rem; 
+    }
+
+    main {
+        padding-top: 2rem; 
+        padding-bottom: 2rem; 
+    }
+
+    .account {
+        padding: 0.5rem; 
+    }
+
+    .cardlist {
+        grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr)); 
+    }
+
+    #details, #groupdetails {
+        flex-direction: column; 
+        align-items: center; 
+        padding-bottom: 2rem; 
+    }
+
+    #additional {
+        flex-direction: column; 
+        gap: 3rem; 
+    }
+
+    .playercard, .groupcard {
+        width: 80%; 
+        max-width: 100%; 
+    }
+
+    .nameplate {
+        width: 120%; 
+        left: -10%; 
+    }
+
+    .cost, .power {
+        width: 2.5rem; 
+        height: 2.5rem; 
+        font-size: 1.5rem; 
+    }
+
+    .cost {
+        top: -15px; 
+        left: -15px; 
+    }
+
+    .power {
+        top: -15px; 
+        right: -15px; 
+    }
+}
