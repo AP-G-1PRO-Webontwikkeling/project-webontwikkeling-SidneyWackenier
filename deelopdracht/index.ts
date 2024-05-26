@@ -1,5 +1,5 @@
-import { Character, Group, User } from './types';
-import { connect, getCharacters, updateCharacter, login, registerUser } from "./database";
+import { Character } from './types';
+import { connect, getCharacters, updateCharacter, registerUser } from "./database";
 import express from 'express';
 import dotenv from "dotenv";
 import session from "./session";
