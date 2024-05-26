@@ -1,17 +1,13 @@
-import * as readline from 'readline-sync';
 import { Character, Group, User } from './types';
 import { connect, getCharacters, updateCharacter, login, registerUser } from "./database";
-import { Console, error } from 'console';
-import { read } from 'fs';
 import express from 'express';
-import ejs from "ejs";
 import dotenv from "dotenv";
-import path, { format } from "path";
 import session from "./session";
 import { secureMiddleware } from "./secureMiddleware";
 import { loginRouter } from "./routes/loginRouter";
 import { homeRouter } from "./routes/homeRouter";
 import { flashMiddleware } from "./flashMiddleware";
+
 
 dotenv.config();
 
