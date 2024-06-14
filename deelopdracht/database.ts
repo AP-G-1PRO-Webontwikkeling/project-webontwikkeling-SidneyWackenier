@@ -6,7 +6,7 @@ import bcrypt from "bcrypt";
 
 dotenv.config();
 
-export const MONGODB_URI = process.env.MONGODB_URI ?? "mongodb+srv://sidneywackenier:fYa5m759VGhw2lTR@project.dvtvpzc.mongodb.net/?retryWrites=true&w=majority&appName=Project";
+export const MONGODB_URI = "mongodb+srv://sidneywackenier:fYa5m759VGhw2lTR@project.dvtvpzc.mongodb.net/?retryWrites=true&w=majority&appName=Project";
 
 export const client = new MongoClient(MONGODB_URI);
 

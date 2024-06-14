@@ -18,7 +18,7 @@ const mongodb_1 = require("mongodb");
 const dotenv_1 = __importDefault(require("dotenv"));
 const bcrypt_1 = __importDefault(require("bcrypt"));
 dotenv_1.default.config();
-exports.MONGODB_URI = (_a = process.env.MONGODB_URI) !== null && _a !== void 0 ? _a : "mongodb+srv://sidneywackenier:e0X8OSpnClO6gdtE@project.dvtvpzc.mongodb.net/?retryWrites=true&w=majority&appName=Project";
+exports.MONGODB_URI = (_a = process.env.MONGODB_URI) !== null && _a !== void 0 ? _a : "mongodb+srv://sidneywackenier:fYa5m759VGhw2lTR@project.dvtvpzc.mongodb.net/?retryWrites=true&w=majority&appName=Project";
 exports.client = new mongodb_1.MongoClient(exports.MONGODB_URI);
 exports.collection = exports.client.db("Project").collection("Characters");
 exports.userCollection = exports.client.db("Project").collection("Users");
